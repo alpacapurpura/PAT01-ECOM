@@ -1,0 +1,73 @@
+.pxl-image-box1{
+	.pxl-item--inner{
+		position: relative;
+		overflow: hidden;
+		border-radius: 12px;
+		.pxl--content{
+			position: absolute;
+			bottom: 12%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.pxl-item--excerpt{
+			@include transition(all 0.3s linear 0ms);
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #fff;
+			opacity: 0;
+			transition-duration: 0.5s;
+		}
+		.btn-image-box{
+			@include transition(all 0.3s linear 0ms);
+			h3{
+				color: #fff;
+				letter-spacing: -0.32px;
+				white-space: nowrap;
+			}
+		}
+		svg{
+			transition: all 0.3s linear;
+		}
+	}
+	&:hover{
+		.pxl-item--excerpt{
+			opacity: 1;
+		}
+		svg{
+			width: 0;
+			height: 0;
+		}
+	}
+}
+.pxl-image-box2{
+	.pxl-item--inner{
+		display: flex;
+		align-items: center;
+		gap: 43px;
+		@media #{$max-md}{
+			display: grid;
+			gap: 15px;
+		}
+	}
+	.pxl-item--image{
+		flex-shrink:0;
+	}
+	.pxl--content{
+		max-width: 380px;
+	}
+	.pxl-item--title{
+		.pxl--text{
+			font-size: 23px;
+			font-weight: 600;
+			letter-spacing: -0.23px;
+			margin-bottom: 10px;
+		}
+	}
+	.pxl-item--excerpt{
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 1.5556;
+		color: rgba(32,32,32,.72);
+	}
+}

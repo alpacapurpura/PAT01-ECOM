@@ -1,0 +1,11 @@
+<?php
+
+class IconWishlist_Widget extends Pxltheme_Core_Widget_Base{
+    protected $name = 'icon_wishlist';
+    protected $title = 'Case Shop Wishlist';
+    protected $icon = 'eicon-heart-o';
+    protected $categories = array( 'pxltheme-core' );
+    protected $params = '{"sections":[{"name":"icon_section","label":"Settings","tab":"content","controls":[{"name":"style","label":"Style","type":"select","options":{"style-default":"Default","style-box":"Box"},"default":"style-default"},{"name":"icon_image_type","label":"Icon Image Type","type":"select","options":{"img":"Image","ic":"Icon"},"default":"ic"},{"name":"pxl_icon","label":"Icon","type":"icons","fa4compatibility":"icon","condition":{"icon_image_type":["ic"]}},{"name":"image","label":"Icon Image","type":"media","condition":{"icon_image_type":["img"]}},{"name":"link","label":"Link","type":"url","placeholder":"https:\/\/your-link.com","default":{"url":"#"}},{"name":"icon_color","label":"Icon Color","type":"color","selectors":{"{{WRAPPER}} .pxl-counter i":"color: {{VALUE}};"}},{"name":"icon_color_hover","label":"Icon Color Hover","type":"color","selectors":{"{{WRAPPER}} .pxl-counter:hover i":"color: {{VALUE}};"}},{"name":"size","label":"Icon Size","type":"slider","control_type":"responsive","size_units":["px"],"range":{"px":{"min":0,"max":300}},"selectors":{"{{WRAPPER}} .pxl-counter i":"font-size: {{SIZE}}{{UNIT}};"}},{"name":"box_color","label":"Box Color","type":"color","selectors":{"{{WRAPPER}} .pxl-counter":"background-color: {{VALUE}};"},"condition":{"style":["style-box"]}},{"name":"box_color_hv","label":"Box Color Hover","type":"color","selectors":{"{{WRAPPER}} .pxl-counter:hover":"background-color: {{VALUE}};"},"condition":{"style":["style-box"]}},{"name":"box_height","label":"Box Height","type":"slider","control_type":"responsive","size_units":["px"],"condition":{"style":["style-box"]},"range":{"px":{"min":0,"max":300}},"selectors":{"{{WRAPPER}} .pxl-counter":"height: {{SIZE}}{{UNIT}};"}},{"name":"box_width","label":"Box Width","type":"slider","control_type":"responsive","size_units":["px"],"range":{"px":{"min":0,"max":300}},"selectors":{"{{WRAPPER}} .pxl-counter":"width: {{SIZE}}{{UNIT}};"},"condition":{"style":["style-box"]}}]}]}';
+    protected $styles = array(  );
+    protected $scripts = array(  );
+}

@@ -1,0 +1,12 @@
+# Ignorar el archivo de configuración de WordPress (contiene contraseñas)
+wp-config.php
+
+# Ignorar la carpeta de uploads y otros directorios de contenido generado
+/wordpress/uploads/
+/wordpress/cache/
+/wordpress/upgrade/
+/wordpress/backups/
+
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+<?php
+
+class PxlIconWishlist_Widget extends Pxltheme_Core_Widget_Base{
+    protected $name = 'pxl_icon_wishlist';
+    protected $title = 'PXL Anchor Wishlist';
+    protected $icon = 'eicon-anchor';
+    protected $categories = array( 'pxltheme-core' );
+    protected $params = '{"sections":[{"name":"icon_section","label":"Settings","tab":"content","controls":[{"name":"link","label":"Link","type":"url","placeholder":"https:\/\/your-link.com","default":{"url":"#"}},{"name":"selected_icon","label":"Icon","type":"icons","default":{"library":"lnil","value":"lnil lnil-heart"}},{"name":"icon_size","label":"Icon Size(px)","type":"slider","control_type":"responsive","range":{"px":{"min":15,"max":300}},"selectors":{"{{WRAPPER}} .pxl-anchor-icon":"font-size: {{SIZE}}{{UNIT}};"}},{"name":"icon_margin","label":"Icon Margin(px)","type":"dimensions","control_type":"responsive","size_units":["px"],"selectors":{"{{WRAPPER}} .pxl-anchor-icon":"margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};"}},{"name":"icon_color","label":"Color","type":"color","control_type":"responsive","selectors":{"{{WRAPPER}} .pxl-anchor, {{WRAPPER}} .pxl-anchor-icon":"color: {{VALUE}};"}},{"name":"icon_color_hover","label":"Hover Color","type":"color","control_type":"responsive","selectors":{"{{WRAPPER}} .pxl-anchor:hover, {{WRAPPER}} .pxl-anchor:hover .pxl-anchor-icon":"color: {{VALUE}};"}},{"name":"wl_count_bg","label":"Count background","type":"color","control_type":"responsive","selectors":{"{{WRAPPER}} .pxl-anchor-wishlist .wl-anchor .anchor-wl-count":"background-color: {{VALUE}};"}},{"name":"wl_count_color","label":"Count Color","type":"color","control_type":"responsive","selectors":{"{{WRAPPER}} .pxl-anchor-wishlist .wl-anchor .anchor-wl-count":"color: {{VALUE}};"}},{"name":"align","label":"Alignment","type":"choose","control_type":"responsive","options":{"start":{"title":"Start","icon":"eicon-text-align-left"},"center":{"title":"Center","icon":"eicon-text-align-center"},"end":{"title":"End","icon":"eicon-text-align-right"}},"selectors":{"{{WRAPPER}} .pxl-anchor-wrap":"justify-content: {{VALUE}};"},"prefix_class":"anchor-align-"},{"name":"custom_class","label":"Custom class","type":"text"}]}]}';
+    protected $styles = array(  );
+    protected $scripts = array(  );
+}

@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------
+Service Style
+----------------------------------------------------------------
+# Service Grid
+# Service Carousel
+--------------------------------------------------------------*/
+.pxl-service-style1 {
+	.pxl-post--icon {
+		width: 96px;
+		height: 96px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 59px;
+		color: #000000;
+		z-index: 99;
+		@include transition(all 300ms linear 0ms);
+		img {
+			max-height: 59px;
+		}
+		&:before, &:after {
+			z-index: -2;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 100%;
+		}
+		&:before {
+			background-color: #fff;
+		}
+		&:after {
+			z-index: -1;
+			opacity: 0;
+			@include transition(all 300ms linear 0ms);
+			@include background-horizontal($gradient_color_from, $gradient_color_to);
+		}
+	}
+	.pxl-post--featured {
+		position: relative;
+		border-radius: 150px 40px 40px 40px;
+		margin-bottom: 20px;
+		@media #{$max-sm} {
+			border-radius: 90px 30px 30px 30px;
+		}
+		img {
+			border-radius: 150px 40px 40px 40px;
+			@media #{$max-sm} {
+				border-radius: 90px 30px 30px 30px;
+			}
+		}
+	}
+	.pxl-post--title {
+		margin-bottom: 0;
+		font-size: 26px;
+		color: #6e6e6e;
+		@media #{$max-lg} {
+			font-size: 24px;
+		}
+	}
+	.pxl-post--readmore {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #7d7d7d;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		i {
+			@include transition(all 300ms linear 0ms);
+			color: inherit;
+			margin-left: 35px;
+		}
+	}
+	.pxl-post--inner {
+		padding-bottom: 30px;
+		&:hover {
+			.pxl-post--icon {
+				color: #fff;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				&:after {
+					opacity: 1;
+				}
+			}
+			.pxl-post--readmore {
+				color: $gradient_color_to;
+				i {
+					transform: translateX(-15px);
+				}
+			}
+			.pxl-post--title {
+				color: #000;
+			}
+		}
+	}
+	&.pxl-service-grid-layout1 {
+		.pxl-post--inner {
+			padding-bottom: 48px;
+		}
+	}
+}
+
+body.rtl {
+}
