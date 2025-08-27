@@ -94,7 +94,7 @@ services:
       - "traefik.http.middlewares.wordpress-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
 
       # Esta línea es la clave: apunta al servicio 'wordpress' en el puerto 80
-      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
+      - "traefik.http.services.wordpress-service.loadbalancer.server.port=8080"
 
     #healthcheck:
     #  test: ["CMD", "curl", "-f", "http://localhost:80/wp-admin/install.php"]
