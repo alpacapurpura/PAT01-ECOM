@@ -78,17 +78,22 @@ services:
       - web_gateway
     labels:
       - "traefik.enable=true"
-      # --- Router HTTP para redirigir a HTTPS ---
-      - "traefik.http.routers.wordpress-http.rule=Host(`andessuyo.com`)"
+      - "traefik.docker.network=web_gateway"
+
+      # --- 1. Definir el enrutador principal para HTTPS ---
+      - "traefik.http.routers.wordpress.rule=Host(`andessuyo.com`)"
       - "traefik.http.routers.wordpress.entrypoints=websecure"
       - "traefik.http.routers.wordpress.tls.certresolver=letsencrypt"
+
+      # --- 2. Conectar el enrutador al servicio correcto ---
+      - "traefik.http.routers.wordpress.service=wordpress-service"
       
-      # --- MIDDLEWARE PARA WORDPRESS (OPCIONAL PERO RECOMENDADO) ---
+      # --- 3. Definir el servicio y a qué puerto del contenedor apunta ---
+      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
+      
+      # --- 4. (Opcional) Asignar middlewares al enrutador ---
       - "traefik.http.routers.wordpress.middlewares=wordpress-headers"
       - "traefik.http.middlewares.wordpress-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
-
-      # Esta línea es la clave: apunta al servicio 'wordpress' en el puerto 80
-      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
 
     #healthcheck:
     #  test: ["CMD", "curl", "-f", "http://localhost:80/wp-admin/install.php"]
