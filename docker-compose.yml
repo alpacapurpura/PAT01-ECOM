@@ -86,13 +86,13 @@ services:
       - "traefik.enable=true"
       # --- Router HTTP para redirigir a HTTPS ---
       - "traefik.http.routers.wordpress-http.rule=Host(`andessuyo.com`)"
-      - "traefik.http.routers.wordpress-http.entrypoints=web"
-      - "traefik.http.routers.wordpress-http.middlewares=redirect-to-https@file"
+      - "traefik.http.routers.wordpress.entrypoints=websecure"
+      - "traefik.http.routers.wordpress.tls.certresolver=letsencrypt"
+      
+      # --- MIDDLEWARE PARA WORDPRESS (OPCIONAL PERO RECOMENDADO) ---
+      - "traefik.http.routers.wordpress.middlewares=odoo-headers"
+      - "traefik.http.middlewares.wordpress-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
 
-      # --- Router HTTPS seguro para tu sitio WordPress ---
-      - "traefik.http.routers.wordpress-secure.rule=Host(`andessuyo.com`)"
-      - "traefik.http.routers.wordpress-secure.entrypoints=websecure"
-      - "traefik.http.routers.wordpress-secure.tls.certresolver=letsencrypt"
       # Esta línea es la clave: apunta al servicio 'wordpress' en el puerto 80
       - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
 
