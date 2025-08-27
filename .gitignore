@@ -10,6 +10,5 @@ wp-config.php
 # Ignorar archivos generados por el sistema operativo
 .DS_Store
 Thumbs.db
-
 .env
 dev.bat
