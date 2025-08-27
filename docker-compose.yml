@@ -3,14 +3,14 @@ version: '3.8'
 services:
   # MySQL Database (Production)
   mysql:
-    image: mysql:8.0
-    container_name: wp_mysql_prod
+    image: mariadb:10.11
+    container_name: wp_mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MYSQL_DATABASE}
+      MARIADB_USER: ${MYSQL_USER}
+      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql/init:/docker-entrypoint-initdb.d
@@ -84,19 +84,17 @@ services:
       - web_gateway
     labels:
       - "traefik.enable=true"
+      # --- Router HTTP para redirigir a HTTPS ---
+      - "traefik.http.routers.wordpress-http.rule=Host(`andessuyo.com`)"
+      - "traefik.http.routers.wordpress-http.entrypoints=web"
+      - "traefik.http.routers.wordpress-http.middlewares=redirect-to-https@file"
 
-      # --- Router HTTP para redirigir a HTTPS (añadido) ---
-      - "traefik.http.routers.traefik-dashboard-http.rule=Host(`andessuyo.com`)"
-      - "traefik.http.routers.traefik-dashboard-http.entrypoints=web"
-      - "traefik.http.routers.traefik-dashboard-http.middlewares=redirect-to-https@file"
-
-      # --- Router HTTPS seguro (existente) ---
-      - "traefik.http.routers.traefik-dashboard.rule=Host(`andessuyo.com`)"
-      - "traefik.http.routers.traefik-dashboard.entrypoints=websecure"
-      - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.traefik-dashboard.service=api@internal"
-      - "traefik.http.routers.traefik-dashboard.middlewares=auth"
-      - "traefik.http.middlewares.auth.basicauth.users=admin:$$apr1$$c2B3pdbu$$/nKhbcoeB9Qf8yM7kVX/e/"
+      # --- Router HTTPS seguro para tu sitio WordPress ---
+      - "traefik.http.routers.wordpress-secure.rule=Host(`andessuyo.com`)"
+      - "traefik.http.routers.wordpress-secure.entrypoints=websecure"
+      - "traefik.http.routers.wordpress-secure.tls.certresolver=letsencrypt"
+      # Esta línea es la clave: apunta al servicio 'wordpress' en el puerto 80
+      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
 
     #healthcheck:
     #  test: ["CMD", "curl", "-f", "http://localhost:80/wp-admin/install.php"]
