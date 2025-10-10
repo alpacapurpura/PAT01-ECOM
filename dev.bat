@@ -26,13 +26,13 @@ del temp_containers.txt 2>nul
 if !container_count! gtr 0 (
     echo [INFO] Contenedores detectados corriendo. Deteniendo...
     echo.
-    docker-compose -f docker-compose.dev.yml down
+    docker compose -f docker-compose.dev.yml down -v
     echo.
     echo [SUCCESS] Contenedores detenidos correctamente.
 ) else (
     echo [INFO] No hay contenedores corriendo. Iniciando ambiente de desarrollo...
     echo.
-    docker-compose -f docker-compose.dev.yml up -d
+    docker compose -f docker-compose.dev.yml up -d
     echo.
     echo [SUCCESS] Ambiente de desarrollo iniciado.
     echo.

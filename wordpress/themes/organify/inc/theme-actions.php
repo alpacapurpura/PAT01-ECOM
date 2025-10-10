@@ -11,7 +11,7 @@ function organify_setup(){
     $GLOBALS['content_width'] = apply_filters( 'organify_content_width', 1200 );
 
     // Make theme available for translation.
-    load_theme_textdomain( 'organify', get_template_directory() . '/languages' );
+    // load_theme_textdomain moved to init hook
 
     // Custom Header
     add_theme_support( 'custom-header' );
@@ -436,4 +436,9 @@ function organify_cart_hidden_sidebar() {
         });
     </script>
     <?php
+}
+// Fix for textdomain loading - moved to init hook
+add_action('init', 'organify_load_textdomain_fix');
+function organify_load_textdomain_fix() {
+    load_theme_textdomain( 'organify', get_template_directory() . '/languages' );
 }
