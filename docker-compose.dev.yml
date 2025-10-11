@@ -28,7 +28,7 @@ services:
       mysql:
         condition: service_healthy
     ports:
-      - "${WORDPRESS_PORT:-80}:80"
+       - "${WORDPRESS_PORT:-80}:80"
     environment:
       # Database Configuration
       WORDPRESS_DB_HOST: mysql:3306
@@ -49,8 +49,8 @@ services:
         define('WP_DEBUG_DISPLAY', true);
 
         // WordPress URLs
-        define('WP_HOME', '${WORDPRESS_URL:-http://localhost:8080}');
-        define('WP_SITEURL', '${WORDPRESS_URL:-http://localhost:8080}');
+        define('WP_HOME', '${WORDPRESS_URL:-http://localhost:9000}');
+        define('WP_SITEURL', '${WORDPRESS_URL:-http://localhost:9000}');
         
         // Performance Settings
         // ini_set('memory_limit', '256M');
@@ -62,7 +62,7 @@ services:
     networks:
       - wordpress_network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80/wp-admin/install.php"]
+      test: ["CMD", "curl", "-f", "http://localhost:9000/wp-admin/install.php"]
       interval: 30s
       timeout: 10s
       retries: 5

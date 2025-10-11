@@ -35,8 +35,8 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    # ports:
-    #   - "${WORDPRESS_PORT:-80}:80"
+    ports:
+       - "${WORDPRESS_PORT:-80}:80"
     environment:
       # Database Configuration
       WORDPRESS_DB_HOST: mysql:3306
@@ -45,7 +45,7 @@ services:
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
 
       # WordPress Configuration
-      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
+      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_a4b7_}
       WORDPRESS_DEBUG: false
 
       # Production Configuration
@@ -53,11 +53,6 @@ services:
         // WordPress URLs para Producción
         define('WP_HOME', '${WORDPRESS_URL}');
         define('WP_SITEURL', '${WORDPRESS_URL}');
-
-        // Production Performance Settings
-        // ini_set('memory_limit', '512M');
-        // ini_set('max_execution_time', '300');
-        // ini_set('max_input_vars', '3000');
 
         // Security Settings
         define('DISALLOW_FILE_EDIT', true);
@@ -71,7 +66,8 @@ services:
         define('WP_POST_REVISIONS', 3);
         define('AUTOSAVE_INTERVAL', 300);
     volumes:
-      - ./wordpress:/var/www/html
+      - wordpress_data:/var/www/html
+      - ./wordpress:/var/www/html/wp-content
     command: >
       sh -c "chown -R www-data:www-data /var/www/html && apache2-foreground"
     networks:

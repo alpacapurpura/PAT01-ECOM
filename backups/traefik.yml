@@ -1,0 +1,36 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+log:
+  level: INFO
+
+api:
+  dashboard: true
+  insecure: false
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    # La red por defecto se define en el docker-compose de cada servicio
+    # usando la etiqueta: "traefik.docker.network=web_gateway"
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "patcocloud@gmail.com"
+      storage: "/acme.json"
+      httpChallenge:
+        entryPoint: web

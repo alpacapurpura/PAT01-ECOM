@@ -1,0 +1,70 @@
+services:
+  traefik:
+    image: traefik:v3.5
+    container_name: traefik-proxy-central
+    restart: unless-stopped
+    command:
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--configFile=/etc/traefik/traefik.yml"
+      - "--certificatesresolvers.letsencrypt.acme.email=patcocloud@gmail.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge=true"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      # --- Se recomienda leer la configuración estática desde un archivo ---
+      # Descomenta las siguientes líneas y borra los comandos de arriba para usar el traefik.yml
+      # - "--configFile=/etc/traefik/traefik.yml"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - web_gateway
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      # - ./traefik.yml:/traefik.yml:ro
+      - ./acme.json:/acme.json # Almacenamiento de certificados
+      # Descomenta la siguiente línea si usas la opción de configFile
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
+    labels:
+      - "traefik.enable=true"
+      # La redirección de HTTP a HTTPS ya es manejada globalmente por traefik.yml
+      - "traefik.http.routers.traefik-dashboard.rule=Host(`traefik.andessuyo.com`)"
+      - "traefik.http.routers.traefik-dashboard.entrypoints=websecure"
+      - "traefik.http.routers.traefik-dashboard.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.traefik-dashboard.service=api@internal"
+      # # Autenticación básica al dashboard
+      # - "traefik.http.routers.traefik-dashboard.middlewares=auth"
+      # - "traefik.http.middlewares.auth.basicauth.users=admin:$$apr1$$c2B3pdbu$$/nKhbcoeB9Qf8yM7kVX/e/"
+    #security_opt:
+      #- no-new-privileges:true
+  # portainer:
+  #   image: portainer/portainer-ce:latest
+  #   container_name: portainer
+  #   restart: unless-stopped
+  #   security_opt:
+  #     - no-new-privileges:true
+  #   networks:
+  #     - web_gateway
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock:ro
+  #     - portainer_data:/data
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=web_gateway"
+  #     - "traefik.http.routers.portainer.rule=Host(`portainer.andessuyo.com`)"
+  #     - "traefik.http.routers.portainer.entrypoints=websecure"
+  #     - "traefik.http.routers.portainer.tls.certresolver=letsencrypt"
+  #     - "traefik.http.routers.portainer.service=portainer-svc"
+  #     - "traefik.http.services.portainer-svc.loadbalancer.server.port=9000"
+networks:
+  web_gateway:
+    name: web_gateway
+    external: true
+
+volumes:
+  letsencrypt:
+  #portainer_data:
