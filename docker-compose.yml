@@ -73,6 +73,8 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./wordpress:/var/www/html/wp-content
+    command: >
+      sh -c "chown -R www-data:www-data /var/www/html/wp-content && apache2-foreground"
     networks:
       - wordpress_network
       - web_gateway
