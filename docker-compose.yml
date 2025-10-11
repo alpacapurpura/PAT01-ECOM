@@ -67,7 +67,9 @@ services:
         define('AUTOSAVE_INTERVAL', 300);
     volumes:
       - wordpress_data:/var/www/html
-      - ./wordpress:/var/www/html/wp-content
+      - ./wordpress/themes:/var/www/html/wp-content/themes
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins
+      - ./wordpress/languages:/var/www/html/wp-content/languages
     # COMANDO TEMPORAL COMENTADO PARA PRIMERA INSTALACIÓN
     # Descomenta este comando SOLO después de que WordPress esté completamente instalado
     # y necesites corregir permisos de archivos existentes
