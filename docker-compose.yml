@@ -71,9 +71,9 @@ services:
         define('WP_POST_REVISIONS', 3);
         define('AUTOSAVE_INTERVAL', 300);
     volumes:
-      - ./wordpress:/var/www/html/wp-content
+      - ./wordpress:/var/www/html
     command: >
-      sh -c "chown -R www-data:www-data /var/www/html/wp-content && apache2-foreground"
+      sh -c "chown -R www-data:www-data /var/www/html && apache2-foreground"
     networks:
       - wordpress_network
       - web_gateway
