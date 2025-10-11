@@ -7,6 +7,7 @@ wp-config.php
 /wordpress/upgrade/
 /wordpress/upgrade-temp-backup/
 /wordpress/backups/
+/wordpress/debug.log
 
 # Ignorar archivos generados por el sistema operativo
 .DS_Store
