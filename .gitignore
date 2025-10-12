@@ -14,3 +14,10 @@ wp-config.php
 Thumbs.db
 .env
 dev.bat
+
+# Ignorar la carpeta de registros y reglas de Wordfence
+/wordpress/wflogs/
+
+# Ignorar los archivos de configuración del Firewall (WAF) en la raíz
+/wordfence-waf.php
+/.user.ini

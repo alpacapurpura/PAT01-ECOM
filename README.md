@@ -47,3 +47,6 @@ MYSQL_PASSWORD=tu_password_usuario
 WORDPRESS_PORT=8080
 PHPMYADMIN_PORT=8081
 ```
+
+
+La primera vez se debe navegar hasta donde se encuentra el entrypoint.sh y ejecutar: chmod +x entrypoint.sh
