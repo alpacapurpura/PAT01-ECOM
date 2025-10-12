@@ -1,8 +1,10 @@
 # Usar una imagen base ligera
 FROM alpine:latest
 
-# Instalar las dependencias: cron y docker-compose
-RUN apk add --no-cache cron docker-compose
+# Instalar las dependencias: dcron, docker CLI y curl
+RUN apk add --no-cache dcron docker-cli curl
+
+
 
 # Copiar nuestro script de backup al contenedor
 COPY backup.sh /usr/local/bin/backup.sh

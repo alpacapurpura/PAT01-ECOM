@@ -13,7 +13,6 @@ wp-config.php
 .DS_Store
 Thumbs.db
 .env
-dev.bat
 
 # Ignorar la carpeta de registros y reglas de Wordfence
 /wordpress/wflogs/

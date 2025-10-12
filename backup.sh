@@ -36,7 +36,7 @@ echo "✅ Iniciando backup para andessuyo.com..."
 # 1. Backup de la Base de Datos
 # Usa las credenciales cargadas desde tu archivo .env
 echo "  -> Creando backup de la base de datos (wordpress_db)..."
-docker-compose exec -T $MYSQL_SERVICE_NAME mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE | gzip > $BACKUP_DIR/db-backup-$DATE.sql.gz
+docker exec wp_mysql mysqldump -u$MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE | gzip > $BACKUP_DIR/db-backup-$DATE.sql.gz
 echo "  -> Backup de la base de datos completado: db-backup-$DATE.sql.gz"
 
 # 2. Backup de los Archivos de WordPress (volumen wordpress_data)
