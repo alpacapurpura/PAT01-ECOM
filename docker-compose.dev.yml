@@ -39,7 +39,7 @@ services:
 
       # WordPress Configuration
       WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
-      WORDPRESS_DEBUG: ${WP_DEBUG:-false}
+      WORDPRESS_DEBUG: ${WP_DEBUG:-true}
 
       # WordPress URLs
       WORDPRESS_CONFIG_EXTRA: |
@@ -52,10 +52,6 @@ services:
         define('WP_HOME', '${WORDPRESS_URL:-http://localhost:9000}');
         define('WP_SITEURL', '${WORDPRESS_URL:-http://localhost:9000}');
         
-        // Performance Settings
-        // ini_set('memory_limit', '256M');
-        // ini_set('max_execution_time', '120');
-        // ini_set('max_input_vars', '2000');
     volumes:
       - wordpress_data:/var/www/html
       - ./wordpress:/var/www/html/wp-content
