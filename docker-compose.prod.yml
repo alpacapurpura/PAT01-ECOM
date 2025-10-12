@@ -109,12 +109,15 @@ services:
       dockerfile: cron.Dockerfile
     container_name: wp_cron
     restart: unless-stopped
+    init: true
     volumes:
       # Montar el socket de Docker para que este contenedor pueda controlar otros
       - /var/run/docker.sock:/var/run/docker.sock
       # Montar el directorio del proyecto para acceder a .env y docker-compose.yml
       - .:/app
     working_dir: /app
+    networks:
+      - wordpress_network
 volumes:
   mysql_data:
     driver: local

@@ -13,8 +13,12 @@ RUN chmod +x /usr/local/bin/backup.sh
 # Copiar el archivo con la definición del cron job
 COPY crontab /etc/crontabs/root
 
+# Establecer permisos correctos para el archivo crontab
+RUN chmod 600 /etc/crontabs/root
+
 # Crear archivo de log para poder ver la salida del cron
 RUN touch /var/log/cron.log
 
 # Comando para iniciar el servicio de cron en primer plano
-CMD ["crond", "-f", "-l", "2"]
+# Usar -f para foreground, -d 8 para debug level, -L /var/log/cron.log para logging
+CMD ["crond", "-f", "-d", "8", "-L", "/var/log/cron.log"]
