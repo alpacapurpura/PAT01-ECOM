@@ -56,7 +56,7 @@ services:
 
         // Security Settings
         define('DISALLOW_FILE_EDIT', true);
-        define('DISALLOW_FILE_MODS', true);
+        define('DISALLOW_FILE_MODS', false); // Cambiar a false solo cuando se haga pase a producción. Debe estar siempre en true 
         define('WP_DEBUG', false);
         define('WP_DEBUG_LOG', false);
         define('WP_DEBUG_DISPLAY', false);
@@ -103,6 +103,18 @@ services:
     #  timeout: 10s
     #  retries: 5
 
+  cron:
+    build:
+      context: .
+      dockerfile: cron.Dockerfile
+    container_name: wp_cron
+    restart: unless-stopped
+    volumes:
+      # Montar el socket de Docker para que este contenedor pueda controlar otros
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Montar el directorio del proyecto para acceder a .env y docker-compose.yml
+      - .:/app
+    working_dir: /app
 volumes:
   mysql_data:
     driver: local

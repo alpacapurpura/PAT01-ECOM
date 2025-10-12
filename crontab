@@ -1,0 +1,5 @@
+# Ejecutar el backup de WordPress todos los días a las 2:00 AM
+# La salida se guardará en /var/log/cron.log para poder depurar
+0 2 * * * /usr/local/bin/backup.sh >> /var/log/cron.log 2>&1
+
+# Línea vacía al final, es requerida por cron
