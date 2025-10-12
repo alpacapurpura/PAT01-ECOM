@@ -70,6 +70,7 @@ services:
       - ./wordpress/themes:/var/www/html/wp-content/themes
       - ./wordpress/plugins:/var/www/html/wp-content/plugins
       - ./wordpress/languages:/var/www/html/wp-content/languages
+      - ./docker/entrypoint.sh:/entrypoint.sh
     # COMANDO TEMPORAL COMENTADO PARA PRIMERA INSTALACIÓN
     # Descomenta este comando SOLO después de que WordPress esté completamente instalado
     # y necesites corregir permisos de archivos existentes
