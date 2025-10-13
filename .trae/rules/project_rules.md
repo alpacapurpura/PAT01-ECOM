@@ -3,7 +3,7 @@
 ## 🎯 Información General del Proyecto
 
 **Proyecto:** E-commerce WordPress con tema Organify  
-**Entorno Local:** Windows 11 con Docker  
+**Entorno Local:** Ubuntu (WSL)  
 **Entorno Producción:** Linux VPS con Traefik  
 **Tema Principal:** `organify` (NO MODIFICAR DIRECTAMENTE)  
 **Tema Hijo:** `organify-child` (TODAS las modificaciones aquí)  
@@ -231,18 +231,6 @@ docker exec wp_app php -l /var/www/html/wp-content/themes/organify-child/functio
 - Validar que `.env` esté en `.gitignore`
 - Sanitizar todas las entradas de usuario
 
-### 2. Archivos Sensibles - NUNCA Commitear
-
-```
-❌ PROHIBIDO EN GIT:
-├── .env                    # Variables de entorno reales
-├── wp-config.php          # Configuración WordPress
-├── wordpress/uploads/     # Archivos subidos por usuarios
-├── wordpress/cache/       # Archivos de caché
-├── *.log                  # Archivos de logs
-├── *.sql                  # Backups de base de datos
-└── node_modules/          # Dependencias Node.js
-```
 
 ### 3. Permisos de Archivos
 
@@ -264,9 +252,8 @@ git status
 # 2. Revisar cambios antes de agregar
 git diff
 
-# 3. Agregar archivos específicos (NUNCA usar git add .)
-git add wordpress/themes/organify-child/functions.php
-git add docker-compose.dev.yml
+# 3. Agregar archivos
+git add .
 
 # 4. Commit con mensaje descriptivo
 git commit -m "feat: agregar función personalizada para checkout"
@@ -314,8 +301,6 @@ git diff wordpress/themes/organify-child/
 # Verificar último commit
 git log -1 --oneline
 
-# Asegurar que no hay archivos sensibles
-git ls-files | grep -E "\.(env|log)$" || echo "OK - No hay archivos sensibles"
 ```
 
 ---
@@ -342,7 +327,7 @@ git log -1 --oneline
 
 **DESARROLLO → PRODUCCIÓN:**
 ```bash
-# 1. EN DESARROLLO LOCAL (Windows)
+# 1. EN DESARROLLO LOCAL (linux)
 git status
 git add wordpress/themes/organify-child/
 git commit -m "feat: descripción del cambio"

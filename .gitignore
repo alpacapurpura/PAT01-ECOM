@@ -5,9 +5,11 @@ wp-config.php
 /wordpress/uploads/
 /wordpress/cache/
 /wordpress/upgrade/
+/wordpress/mu-plugins/
 /wordpress/upgrade-temp-backup/
 /wordpress/backups/
 /wordpress/debug.log
+debug.log
 
 # Ignorar archivos generados por el sistema operativo
 .DS_Store
