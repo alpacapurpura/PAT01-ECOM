@@ -9,6 +9,10 @@ wp-config.php
 /wordpress/upgrade-temp-backup/
 /wordpress/backups/
 /wordpress/debug.log
+/wordpress/plugins/duplicate-page/
+/wordpress/plugins/libro-de-reclamaciones-y-quejas/
+/wordpress/plugins/ubigeo-peru/
+/wordpress/wordfence/
 debug.log
 
 # Ignorar archivos generados por el sistema operativo
