@@ -19,6 +19,7 @@ debug.log
 .DS_Store
 Thumbs.db
 .env
+.env.prod
 
 # Ignorar la carpeta de registros y reglas de Wordfence
 /wordpress/wflogs/

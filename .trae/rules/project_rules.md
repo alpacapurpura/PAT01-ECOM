@@ -312,7 +312,7 @@ git log -1 --oneline
 **COMANDOS SSH:**
 ```bash
 # Conectar al servidor
-ssh root@161.132.41.191
+ssh -i /ruta/al/archivo/id_rsa -p 22022 root@161.132.41.191
 # Contraseña: P4tc0_2
 
 # Navegar al proyecto
@@ -334,7 +334,7 @@ git commit -m "feat: descripción del cambio"
 git push origin main
 
 # 2. EN SERVIDOR DE PRODUCCIÓN (Linux)
-ssh root@161.132.41.191
+ssh -i /ruta/al/archivo/id_rsa -p 22022 root@161.132.41.191
 cd ../opt/PAT01-ECOM
 git pull origin main
 docker-compose -f docker-compose.prod.yml down

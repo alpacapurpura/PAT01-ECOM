@@ -5,7 +5,28 @@ set -e
 
 echo "🚀 Iniciando script de entrada..."
 
-# 1. Cambiar el propietario de todo wp-content
+# 1. Verificar si WordPress está instalado (primera ejecución)
+if [ ! -f "/var/www/html/index.php" ]; then
+    echo "📦 Primera ejecución detectada - Copiando WordPress core..."
+    
+    # Copiar todos los archivos de WordPress desde la imagen oficial
+    if [ -d "/usr/src/wordpress" ]; then
+        echo "📂 Copiando archivos desde /usr/src/wordpress..."
+        cp -r /usr/src/wordpress/. /var/www/html/
+        echo "✅ WordPress core copiado exitosamente"
+    else
+        echo "❌ Error: No se encontró /usr/src/wordpress"
+        exit 1
+    fi
+    
+    # Establecer propietario inicial para todos los archivos
+    echo "👤 Estableciendo propietario inicial..."
+    chown -R www-data:www-data /var/www/html
+else
+    echo "✅ WordPress ya está instalado, continuando..."
+fi
+
+# 2. Cambiar el propietario de todo wp-content
 echo "✨ Cambiando propietario de wp-content..."
 chown -R www-data:www-data /var/www/html/wp-content
 
