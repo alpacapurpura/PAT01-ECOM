@@ -10,9 +10,9 @@ wp-config.php
 /wordpress/backups/
 /wordpress/debug.log
 /wordpress/plugins/duplicate-page/
-/wordpress/plugins/libro-de-reclamaciones-y-quejas/
-/wordpress/plugins/ubigeo-peru/
+/wordpress/plugins/customizer-export-import/
 /wordpress/wordfence/
+/wordpress/backups/
 debug.log
 
 # Ignorar archivos generados por el sistema operativo
