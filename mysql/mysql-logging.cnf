@@ -1,0 +1,40 @@
+[mysqld]
+# Configuración de logs centralizados para MySQL/MariaDB
+# Ubicación: /home/chris/PAT01-ECOM/mysql/mysql-logging.cnf
+
+# Log general - registra todas las consultas
+general_log = 1
+general_log_file = /var/log/mysql/general.log
+
+# Log de errores
+log_error = /var/log/mysql/error.log
+
+# Log de consultas lentas
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+
+# Log binario para replicación (opcional)
+# log_bin = /var/log/mysql/mysql-bin.log
+# binlog_format = ROW
+# expire_logs_days = 7
+
+# Configuración de rotación de logs
+max_binlog_size = 100M
+
+# Configuración de seguridad para logs
+log_output = FILE
+
+[mysql_safe]
+# Log de errores para mysql_safe
+log-error = /var/log/mysql/mysqld_safe.log
+
+[client]
+# Configuración del cliente
+default-character-set = utf8mb4
+
+[mysqldump]
+# Configuración para mysqldump
+single-transaction
+routines
+triggers

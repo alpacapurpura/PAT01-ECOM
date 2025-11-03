@@ -3,6 +3,11 @@ services:
     image: mariadb:10.11
     container_name: wp_mysql
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "7"
     environment:
       MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MARIADB_DATABASE: ${MYSQL_DATABASE}
@@ -10,6 +15,8 @@ services:
       MARIADB_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./wordpress/logs/mysql:/var/log/mysql
+      - ./mysql/mysql-logging.cnf:/etc/mysql/conf.d/mysql-logging.cnf:ro
     networks:
       - wordpress_network
     healthcheck:
@@ -43,6 +50,7 @@ services:
     volumes:
       - wordpress_data:/var/www/html
       - ./wordpress:/var/www/html/wp-content
+      - ./wordpress/logs:/var/www/html/wp-content/logs
     networks:
       - wordpress_network
     healthcheck:
@@ -79,6 +87,7 @@ services:
       - ./wordpress/themes:/var/www/html/wp-content/themes
       - ./wordpress/plugins:/var/www/html/wp-content/plugins
       - ./wordpress/languages:/var/www/html/wp-content/languages
+      - ./wordpress/logs:/var/www/html/wp-content/logs
     networks:
       - wordpress_network
     labels:

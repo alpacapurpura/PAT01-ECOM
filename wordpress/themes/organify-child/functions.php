@@ -23,6 +23,9 @@ function organify_child_setup() {
     load_child_theme_textdomain('organify-child', get_stylesheet_directory() . '/languages');
 }
 
+// Cargar configuración personalizada de logs centralizados
+require_once get_stylesheet_directory() . '/wp-config-custom.php';
+
 /**
  * Función de respaldo para pxl_register_shortcode si Case Addons no está activado
  *
