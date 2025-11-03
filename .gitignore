@@ -7,7 +7,7 @@ wp-config.php
 /wordpress/upgrade/
 /wordpress/mu-plugins/
 /wordpress/upgrade-temp-backup/
-/wordpress/backups/
+/wordpress/code-backups/
 /wordpress/debug.log
 /wordpress/plugins/duplicate-page/
 /wordpress/plugins/customizer-export-import/
@@ -18,8 +18,11 @@ debug.log
 # Ignorar archivos generados por el sistema operativo
 .DS_Store
 Thumbs.db
+
+# Archivos de entorno específicos
 .env
-.env.prod
+.env.*
+!.env.example
 
 # Ignorar la carpeta de registros y reglas de Wordfence
 /wordpress/wflogs/
