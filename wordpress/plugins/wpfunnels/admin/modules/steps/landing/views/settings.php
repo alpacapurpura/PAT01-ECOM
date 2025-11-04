@@ -1,6 +1,0 @@
-<?php
-/**
- * Settings module
- * 
- * @package
- */

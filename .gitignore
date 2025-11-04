@@ -8,6 +8,7 @@ wp-config.php
 /wordpress/mu-plugins/
 /wordpress/upgrade-temp-backup/
 /code-backups/
+/backups/
 /wordpress/logs/
 /wordpress/plugins/duplicate-page/
 /wordpress/plugins/customizer-export-import/

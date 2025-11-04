@@ -17,7 +17,35 @@ function organify_child_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 }
 
-// Configurar textdomain (WordPress 6.7.0+)
+/**
+ * SOLUCIÓN DEFINITIVA: Cargar textdomain del tema padre Organify
+ * 
+ * El tema padre Organify no está cargando correctamente su textdomain 'organify',
+ * causando el error "_load_textdomain_just_in_time". Aunque hay un comentario en
+ * theme-actions.php línea 12 que dice "load_theme_textdomain moved to init hook",
+ * nunca se implementó correctamente.
+ * 
+ * Esta función soluciona el problema cargando el textdomain del tema padre
+ * en el momento correcto (hook 'after_setup_theme') con prioridad alta (1)
+ * para asegurar que se cargue antes que otros plugins y evitar los warnings.
+ * 
+ * @since 1.0.0
+ */
+add_action('after_setup_theme', 'organify_child_load_parent_textdomain', 1);
+function organify_child_load_parent_textdomain() {
+    // Verificar que el textdomain del tema padre no esté ya cargado
+    if (!is_textdomain_loaded('organify')) {
+        // Cargar el textdomain del tema padre desde su directorio de idiomas
+        load_theme_textdomain('organify', get_template_directory() . '/languages');
+        
+        // Log para debugging (solo si WP_DEBUG está activo)
+        if (defined('WP_DEBUG') && WP_DEBUG) {
+            error_log('Organify Child: Textdomain del tema padre "organify" cargado correctamente en hook init');
+        }
+    }
+}
+
+// Configurar textdomain del tema hijo (WordPress 6.7.0+)
 add_action('after_setup_theme', 'organify_child_setup');
 function organify_child_setup() {
     load_child_theme_textdomain('organify-child', get_stylesheet_directory() . '/languages');

@@ -1,0 +1,6 @@
+// Configuración de logs de WooCommerce usando filtro oficial
+// Usar filtro woocommerce_log_directory en lugar de definir WC_LOG_DIR directamente
+// para evitar conflictos con la definición interna de WooCommerce
+add_filter('woocommerce_log_directory', function($log_directory) {
+    return WP_LOGS_BASE_DIR . '/plugins/woocommerce/';
+});

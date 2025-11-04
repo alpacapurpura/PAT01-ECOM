@@ -23,17 +23,29 @@ if (!defined('ABSPATH')) {
 define('WP_LOGS_BASE_DIR', WP_CONTENT_DIR . '/logs');
 
 // Configuración de debug de WordPress
-define('WP_DEBUG', true);
-define('WP_DEBUG_LOG', WP_LOGS_BASE_DIR . '/wordpress/debug.log');
-define('WP_DEBUG_DISPLAY', false);
-define('SCRIPT_DEBUG', true);
+if (!defined('WP_DEBUG')) {
+    define('WP_DEBUG', true);
+}
+if (!defined('WP_DEBUG_LOG')) {
+    define('WP_DEBUG_LOG', WP_LOGS_BASE_DIR . '/wordpress/debug.log');
+}
+if (!defined('WP_DEBUG_DISPLAY')) {
+    define('WP_DEBUG_DISPLAY', false);
+}
+if (!defined('SCRIPT_DEBUG')) {
+    define('SCRIPT_DEBUG', true);
+}
 
 // Configuración de logs de errores PHP
 ini_set('log_errors', 1);
 ini_set('error_log', WP_LOGS_BASE_DIR . '/wordpress/php-errors.log');
 
-// Configuración de logs de WooCommerce
-define('WC_LOG_DIR', WP_LOGS_BASE_DIR . '/plugins/woocommerce/');
+// Configuración de logs de WooCommerce usando filtro oficial
+// Usar filtro woocommerce_log_directory en lugar de definir WC_LOG_DIR directamente
+// para evitar conflictos con la definición interna de WooCommerce
+add_filter('woocommerce_log_directory', function($log_directory) {
+    return WP_LOGS_BASE_DIR . '/plugins/woocommerce/';
+});
 define('WC_LOG_DIR_CUSTOM', true);
 
 // Configuración de logs de consultas SQL
