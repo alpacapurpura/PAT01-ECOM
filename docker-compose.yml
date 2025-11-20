@@ -100,12 +100,24 @@ services:
       - web_gateway
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.wordpress.rule=Host(`${DOMAIN_NAME}`)"
-      - "traefik.http.routers.wordpress.entrypoints=websecure"
-      - "traefik.http.routers.wordpress.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.wordpress.service=wordpress-service"
-      - "traefik.http.services.wordpress-service.loadbalancer.server.port=80"
       - "traefik.docker.network=web_gateway"
+
+      # --- Router HTTPS (Puerto 443) ---
+      # Cambiamos el nombre a 'wp-prod-secure' para evitar conflictos
+      - "traefik.http.routers.wp-prod-secure.rule=Host(`${DOMAIN_NAME}`)"
+      - "traefik.http.routers.wp-prod-secure.entrypoints=websecure"
+      - "traefik.http.routers.wp-prod-secure.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.wp-prod-secure.service=wp-prod-service"
+
+      # --- Router HTTP (Puerto 80 - Redirección) ---
+      # Este router captura el tráfico http y lo manda al middleware que vi en tu foto
+      - "traefik.http.routers.wp-prod-http.rule=Host(`${DOMAIN_NAME}`)"
+      - "traefik.http.routers.wp-prod-http.entrypoints=web"
+      - "traefik.http.routers.wp-prod-http.middlewares=redirect-to-https@docker"
+      - "traefik.http.routers.wp-prod-http.service=wp-prod-service"
+
+      # --- Servicio (Backend) ---
+      - "traefik.http.services.wp-prod-service.loadbalancer.server.port=80"
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost/"]
       interval: 30s
