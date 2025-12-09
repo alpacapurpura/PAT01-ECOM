@@ -99,3 +99,14 @@ function organify_child_media_support() {
     // Agregar soporte para formatos de imagen adicionales
     add_theme_support('html5', array('gallery', 'caption'));
 }
+
+/*
+ * Forzar la búsqueda solo en productos de WooCommerce
+ */
+function andessuyo_search_filter($query) {
+    // Verifica si es una búsqueda, si es la consulta principal y si no es el admin
+    if ($query->is_search() && $query->is_main_query() && !is_admin()) {
+        $query->set('post_type', 'product');
+    }
+}
+add_action('pre_get_posts', 'andessuyo_search_filter');

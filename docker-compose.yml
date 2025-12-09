@@ -45,7 +45,14 @@ services:
       TZ: ${TIMEZONE}
       WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX}
       WORDPRESS_DEBUG: ${WP_DEBUG}
-      WORDPRESS_CONFIG_EXTRA: ${WORDPRESS_CONFIG_EXTRA}
+      WORDPRESS_CONFIG_EXTRA: |
+        ${WORDPRESS_CONFIG_EXTRA}
+        define( 'FLUENTMAIL_SMTP_HOST', '${SMTP_HOST}' );
+        define( 'FLUENTMAIL_SMTP_PORT', '${SMTP_PORT}' );
+        define( 'FLUENTMAIL_SMTP_USERNAME', '${SMTP_USER}' );
+        define( 'FLUENTMAIL_SMTP_PASSWORD', '${SMTP_PASSWORD}' );
+        define( 'FLUENTMAIL_SMTP_SECURE', 'tls' );
+        define( 'FLUENTMAIL_REROUTE_PHP_MAILER', true );
     volumes:
       - wordpress_data:/var/www/html
       - ./wordpress:/var/www/html/wp-content
@@ -88,7 +95,14 @@ services:
       TZ: ${TIMEZONE}
       WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX}
       WORDPRESS_DEBUG: 0
-      WORDPRESS_CONFIG_EXTRA: ${WORDPRESS_CONFIG_EXTRA}
+      WORDPRESS_CONFIG_EXTRA: |
+        ${WORDPRESS_CONFIG_EXTRA}
+        define( 'FLUENTMAIL_SMTP_HOST', '${SMTP_HOST}' );
+        define( 'FLUENTMAIL_SMTP_PORT', '${SMTP_PORT}' );
+        define( 'FLUENTMAIL_SMTP_USER', '${SMTP_USER}' );
+        define( 'FLUENTMAIL_SMTP_PASSWORD', '${SMTP_PASSWORD}' );
+        define( 'FLUENTMAIL_SMTP_SECURE', 'tls' );
+        define( 'FLUENTMAIL_REROUTE_PHP_MAILER', true );
     volumes:
       - wordpress_data:/var/www/html
       - ./wordpress/themes:/var/www/html/wp-content/themes
@@ -96,6 +110,7 @@ services:
       - ./wordpress/languages:/var/www/html/wp-content/languages
       - ./wordpress/logs:/var/www/html/wp-content/logs
       - ./wordpress/uploads:/var/www/html/wp-content/uploads
+      - ./config/php/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - wordpress_network
       - web_gateway
@@ -140,7 +155,7 @@ services:
       PMA_USER: ${MYSQL_USER}
       PMA_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      UPLOAD_LIMIT: 20M
+      UPLOAD_LIMIT: 64M
     networks:
       - wordpress_network
       - web_gateway_local

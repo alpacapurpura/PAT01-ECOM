@@ -1,0 +1,241 @@
+# Translation of Plugins - Ubigeo de Perú para Woocommerce y WordPress - Stable (latest release) in Spanish (Peru)
+# This file is distributed under the same license as the Plugins - Ubigeo de Perú para Woocommerce y WordPress - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-08-13 23:14:30+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.1\n"
+"Language: es_PE\n"
+"Project-Id-Version: Plugins - Ubigeo de Perú para Woocommerce y WordPress - Stable (latest release)\n"
+
+#: rt_ubigeo_checkout.php:121 rt_ubigeo_checkout.php:124
+#: rt_ubigeo_checkout.php:139 rt_ubigeo_checkout.php:142
+#: rt_ubigeo_checkout.php:161 rt_ubigeo_checkout.php:164
+#: rt_ubigeo_checkout.php:167 rt_ubigeo_checkout.php:182
+#: rt_ubigeo_checkout.php:185 rt_ubigeo_lib.php:247 rt_ubigeo_lib.php:283
+msgid "Select District "
+msgstr "Seleccionar Distrito"
+
+#: rt_ubigeo_checkout.php:112 rt_ubigeo_checkout.php:115
+#: rt_ubigeo_checkout.php:130 rt_ubigeo_checkout.php:133
+#: rt_ubigeo_checkout.php:150 rt_ubigeo_checkout.php:153
+#: rt_ubigeo_checkout.php:173 rt_ubigeo_checkout.php:176 rt_ubigeo_lib.php:227
+#: rt_ubigeo_lib.php:267
+msgid "Select Province "
+msgstr "Seleccionar Provincia"
+
+#: rt_ubigeo_lib.php:6 rt_ubigeo_lib.php:25
+msgid "Select Department "
+msgstr "Seleccionar Departamento"
+
+#: rt_ubigeo_admin.php:60 rt_ubigeo_admin.php:213 ubigeo-peru.php:71
+msgid "Settings"
+msgstr "Ajustes"
+
+#: rt_ubigeo_admin.php:314
+msgid "RT - Contact"
+msgstr "RT - Contacto"
+
+#: rt_ubigeo_admin.php:313
+msgid "Go to"
+msgstr "Ir a"
+
+#: rt_ubigeo_admin.php:311
+msgid "I have other questions"
+msgstr "Tengo otras preguntas"
+
+#: rt_ubigeo_admin.php:309
+msgid "LINK"
+msgstr "Url"
+
+#: rt_ubigeo_admin.php:307
+msgid "The PREMIUM version is in the following "
+msgstr "La versión PREMIUM está en la siguiente"
+
+#: rt_ubigeo_admin.php:305
+msgid "What is the PREMIUM version?"
+msgstr "¿Qué es la versión PREMIUM?"
+
+#: rt_ubigeo_admin.php:303
+msgid "Said functional functionality is in a PREMIUM version."
+msgstr "Dicha funcionalidad funcional se encuentra en versión PREMIUM."
+
+#: rt_ubigeo_admin.php:301
+msgid "How to configure the shipping cost to the module?"
+msgstr "¿Cómo configurar el costo de envío al módulo?"
+
+#: rt_ubigeo_admin.php:299
+msgid "This plugin only adds the ubigeo in the woocommerce checkout, it does not have the shipping cost functionality"
+msgstr "Este complemento solo agrega el ubigeo en el pago de woocommerce, no tiene la funcionalidad de costo de envío"
+
+#: rt_ubigeo_admin.php:297
+msgid "How do I add the shipping cost or configure the costs?"
+msgstr "¿Cómo agrego el costo de envío o configuro los costos?"
+
+#: rt_ubigeo_admin.php:295
+msgid "This plugin is totally free."
+msgstr "Este complemento es totalmente gratuito."
+
+#: rt_ubigeo_admin.php:293
+msgid "What is the cost of the module?"
+msgstr "¿Cuál es el costo del módulo?"
+
+#: rt_ubigeo_admin.php:291
+msgid "It allows you to integrate your Woocommerce to Ubigeo from Peru to ask customers for their information at checkout."
+msgstr "Le permite integrar su Woocommerce a Ubigeo desde Perú para solicitar a los clientes su información al momento de pagar."
+
+#: rt_ubigeo_admin.php:289
+msgid "What does this module do?"
+msgstr "¿Qué hace este módulo?"
+
+#: rt_ubigeo_admin.php:203
+msgid "Docs "
+msgstr "Documentación"
+
+#: rt_ubigeo_admin.php:201
+msgid "You can read the documentation in the "
+msgstr "Puede leer la documentación en el"
+
+#: rt_ubigeo_admin.php:198
+msgid "Link Docs Ubigeo"
+msgstr "Enlace Docs Ubigeo"
+
+#: rt_ubigeo_admin.php:192
+msgid "Shipping Ubigeo "
+msgstr "Envíos Ubigeo"
+
+#: rt_ubigeo_admin.php:191
+msgid "You can go to the following link"
+msgstr "Puedes ir al siguiente enlace"
+
+#: rt_ubigeo_admin.php:188
+msgid "Activate shipping ubigeo"
+msgstr "Activar envío ubigeo"
+
+#: rt_ubigeo_admin.php:181
+msgid "Add the Districts of Peru"
+msgstr "Agregar los distritos de Perú"
+
+#: rt_ubigeo_admin.php:180
+msgid "Add the Provinces of Peru"
+msgstr "Agregar las Provincias del Perú"
+
+#: rt_ubigeo_admin.php:179
+msgid "Add the Departments of Peru"
+msgstr "Agregar los Departamentos del Perú"
+
+#: rt_ubigeo_admin.php:175
+msgid "Attributes"
+msgstr "Atributos"
+
+#: rt_ubigeo_admin.php:170
+msgid "Allows you to select departments, provinces and districts of Peru"
+msgstr "Le permite seleccionar departamentos, provincias y distritos del Perú"
+
+#: rt_ubigeo_admin.php:167
+msgid "Description"
+msgstr "Descripción"
+
+#: rt_ubigeo_admin.php:164
+msgid "Peru Ubigeo Documentation for Woocommerce"
+msgstr "Documentación de Ubigeo de Perú para Woocommerce"
+
+#: rt_ubigeo_admin.php:64 rt_ubigeo_admin.php:287
+msgid "Help"
+msgstr "Ayuda"
+
+#: rt_ubigeo_admin.php:54
+msgid "License"
+msgstr "Licencia"
+
+#: rt_ubigeo_admin.php:50
+msgid "Import"
+msgstr "Importar"
+
+#: rt_ubigeo_admin.php:46
+msgid "Ubigeo"
+msgstr "Ubigeo"
+
+#: rt_ubigeo_admin.php:39 ubigeo-peru.php:62
+msgid "Docs"
+msgstr "Documentación"
+
+#: rt_ubigeo_admin.php:33
+msgid "Ubigeo from Peru for Woocommerce | Integration of Ubigeo from Peru to your Woocommerce"
+msgstr "Ubigeo de Perú para Woocommerce | Integración de Ubigeo de Perú a tu Woocommerce"
+
+#: rt_ubigeo_checkout.php:213 rt_ubigeo_checkout.php:244
+#: rt_ubigeo_checkout.php:590 rt_ubigeo_checkout.php:606
+#: rt_ubigeo_checkout.php:624 rt_ubigeo_checkout.php:638
+#: rt_ubigeo_checkout.php:666 rt_ubigeo_checkout.php:674
+#: rt_ubigeo_checkout.php:693 rt_ubigeo_checkout.php:720
+#: rt_ubigeo_checkout.php:726 rt_ubigeo_checkout.php:743
+#: rt_ubigeo_checkout.php:749
+msgid "District"
+msgstr "Distrito"
+
+#: rt_ubigeo_checkout.php:203 rt_ubigeo_checkout.php:234
+#: rt_ubigeo_checkout.php:589 rt_ubigeo_checkout.php:605
+#: rt_ubigeo_checkout.php:623 rt_ubigeo_checkout.php:637
+#: rt_ubigeo_checkout.php:665 rt_ubigeo_checkout.php:673
+#: rt_ubigeo_checkout.php:692 rt_ubigeo_checkout.php:719
+#: rt_ubigeo_checkout.php:725 rt_ubigeo_checkout.php:742
+#: rt_ubigeo_checkout.php:748
+msgid "Province"
+msgstr "Provincia"
+
+#: rt_ubigeo_checkout.php:193 rt_ubigeo_checkout.php:223
+#: rt_ubigeo_checkout.php:588 rt_ubigeo_checkout.php:604
+#: rt_ubigeo_checkout.php:622 rt_ubigeo_checkout.php:636
+#: rt_ubigeo_checkout.php:664 rt_ubigeo_checkout.php:672
+#: rt_ubigeo_checkout.php:691 rt_ubigeo_checkout.php:718
+#: rt_ubigeo_checkout.php:724 rt_ubigeo_checkout.php:741
+#: rt_ubigeo_checkout.php:747
+msgid "Department"
+msgstr "Departamento"
+
+#: rt_ubigeo_checkout.php:603 rt_ubigeo_checkout.php:634
+#: rt_ubigeo_checkout.php:687 rt_ubigeo_checkout.php:736
+msgid "Shipping Ubigeo Peru"
+msgstr "Envíos Ubigeo Perú"
+
+#: rt_ubigeo_checkout.php:587 rt_ubigeo_checkout.php:620
+#: rt_ubigeo_checkout.php:658 rt_ubigeo_checkout.php:713
+msgid "Billing Ubigeo Peru"
+msgstr "Facturación Ubigeo Perú"
+
+#: rt_ubigeo_setup.php:25
+msgid "Peru's Ubigeo for WooCommerce: Error creating ubigeo district table. Please check that the database user you are using can create tables and reinstall the module."
+msgstr "Ubigeo de Perú para WooCommerce: Error al crear la tabla de distrito ubigeo. Compruebe que el usuario de la base de datos que está utilizando pueda crear tablas y reinstalar el módulo."
+
+#: rt_ubigeo_setup.php:16
+msgid "Peru's Ubigeo for WooCommerce: Error creating ubigeo province table. Please check that the database user you are using can create tables and reinstall the module."
+msgstr "Ubigeo de Perú para WooCommerce: Error al crear la tabla de provincia de ubigeo. Compruebe que el usuario de la base de datos que está utilizando pueda crear tablas y reinstalar el módulo."
+
+#: rt_ubigeo_setup.php:7
+msgid "Peru's Ubigeo for WooCommerce: Error creating ubigeo department table. Please check that the database user you are using can create tables and reinstall the module."
+msgstr "Ubigeo de Perú para WooCommerce: Error al crear la tabla del departamento de ubigeo. Compruebe que el usuario de la base de datos que está utilizando pueda crear tablas y reinstalar el módulo."
+
+#. Description of the plugin
+#: ubigeo-peru.php
+msgid "Peru's Ubigeo for WordPress and WooCommerce - Plugin contains the departments - provinces and districts of Peru"
+msgstr "Ubigeo de Perú para WooCommerce - El complemento contiene los departamentos - provincias y distritos de Perú"
+
+#: rt_ubigeo_checkout.php:435 rt_ubigeo_checkout.php:438
+#: rt_ubigeo_checkout.php:441 rt_ubigeo_checkout.php:448
+#: rt_ubigeo_checkout.php:451 rt_ubigeo_checkout.php:454
+msgid "%s is a required field."
+msgstr "%s es un campo obligatorio."
+
+#. Author URI of the plugin
+#: ubigeo-peru.php
+msgid "https://renzotejada.com/"
+msgstr "https://renzotejada.com/"
+
+#. Author of the plugin
+#: ubigeo-peru.php
+msgid "Renzo Tejada"
+msgstr "Renzo Tejada"

@@ -192,11 +192,11 @@ msgstr "Si eres autor de un plugin, puedes obtener más información sobre <a hr
 msgid "If you are a plugin author, you can learn more about <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">how to add the Personal Data Eraser to a plugin</a>."
 msgstr "Si eres autor de un plugin, puedes obtener más información sobre <a href=\"https://developer.wordpress.org/plugins/privacy/adding-the-personal-data-eraser-to-your-plugin/\">cómo añadir el borrado de datos personales a un plugin</a>."
 
-#: wp-admin/about.php:240
+#: wp-admin/about.php:260
 msgid "See everything new"
 msgstr "Ver todo lo nuevo"
 
-#: wp-admin/about.php:226
+#: wp-admin/about.php:246
 msgid "And much more"
 msgstr "Y mucho más"
 
@@ -339,11 +339,11 @@ msgstr "Instalar ahora"
 msgid "Created by a worldwide team of passionate individuals"
 msgstr "Creado por un equipo mundial de personas apasionadas"
 
-#: wp-admin/about.php:196
+#: wp-admin/about.php:216
 msgid "Accessibility improvements"
 msgstr "Mejoras de accesibilidad"
 
-#: wp-admin/about.php:218
+#: wp-admin/about.php:238
 msgid "Performance updates"
 msgstr "Actualizaciones de rendimiento"
 
@@ -426,7 +426,7 @@ msgid "Your WordPress version is %1$s, however the new plugin version requires %
 msgstr "Tu versión de WordPress es la %1$s, sin embargo la nueva versión del plugin requiere la %2$s."
 
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:79 wp-admin/about.php:104
+#: wp-admin/about.php:74 wp-admin/about.php:99 wp-admin/about.php:124
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -893,7 +893,7 @@ msgid "Be the future of WordPress"
 msgstr "Sé parte del futuro de WordPress"
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:265
+#: wp-admin/about.php:285
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive workshops</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "<a href=\"%1$s\">Aprende WordPress</a> es un recurso gratuito para usuarios nuevos y experimentados de WordPress. Está repleto de vídeos sobre cómo utilizar las distintas características de WordPress, <a href=\"%2$s\">eventos interactivos</a> para explorar temáticas en profundidad, y planes de lecciones para sumergirse en áreas específicas de WordPress."
 
@@ -1039,12 +1039,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">Documentación sobre el personalizador</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:405
+#: wp-admin/about.php:425
 msgid "https://wordpress.org/download/"
 msgstr "https://es.wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:402
+#: wp-admin/about.php:422
 msgid "This is the final release of WordPress %s"
 msgstr "Esta es la versión final de WordPress %s"
 
@@ -1367,17 +1367,17 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "Contacta con nuestros desarrolladores del núcleo de WordPress para asegurar que nunca vuelvas a tener este problema."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:399
+#: wp-admin/about.php:419
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "¡Importante! Tu versión de WordPress (%1$s) dejará de recibir actualizaciones en un futuro próximo. Para mantener seguro tu sitio, por favor, <a href=\"%2$s\">actualiza a la última versión de WordPress</a>."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:396
+#: wp-admin/about.php:416
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "¡Importante! Tu versión de WordPress (%1$s) ya no recibe soporte, y no recibirá ninguna actualización de seguridad para tu web. Para mantener seguro tu sitio, por favor, <a href=\"%2$s\">actualiza a la última versión de WordPress</a>."
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:256
+#: wp-admin/about.php:276
 msgid "Learn more about WordPress %s"
 msgstr "Aprende más sobre WordPress %s"
 
@@ -2229,7 +2229,7 @@ msgstr "Tu nueva contraseña para %s es:"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "Necesario para crear una contraseña de aplicación, pero no para actualizar al usuario."
 
-#: wp-admin/about.php:340
+#: wp-admin/about.php:360
 msgid "Go to Updates"
 msgstr "Ir a las actualizaciones"
 
@@ -7650,7 +7650,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Actualmente como: %s) "
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:370
+#: wp-admin/about.php:390
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>Versión %s</strong> mostr&oacute; un problema de seguridad."
 
@@ -7658,15 +7658,15 @@ msgstr "<strong>Versión %s</strong> mostr&oacute; un problema de seguridad."
 msgid "Profile Picture"
 msgstr "Imagen de perfil"
 
-#: wp-admin/about.php:59 wp-admin/about.php:367
+#: wp-admin/about.php:59 wp-admin/about.php:387
 msgid "Maintenance and Security Releases"
 msgstr "Versiones de mantenimiento y seguridad"
 
-#: wp-admin/about.php:364
+#: wp-admin/about.php:384
 msgid "Security Releases"
 msgstr "Versiones de seguridad"
 
-#: wp-admin/about.php:361
+#: wp-admin/about.php:381
 msgid "Maintenance Releases"
 msgstr "Versiones de mantenimiento"
 
@@ -10936,13 +10936,14 @@ msgstr "Mostrar la barra de herramientas al ver el sitio"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:76 wp-admin/about.php:101 wp-admin/about.php:393
+#: wp-admin/about.php:71 wp-admin/about.php:96 wp-admin/about.php:121
+#: wp-admin/about.php:413
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Para más información, lee <a href=\"%s\">las notas de la versión</a>."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:387
+#: wp-admin/about.php:407
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "La <strong>versión %1$s</strong> soluciona algunos problemas de seguridad y soluciona %2$s fallo."
@@ -10950,33 +10951,34 @@ msgstr[1] "La <strong>versión %1$s</strong> soluciona algunos problemas de segu
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:381
+#: wp-admin/about.php:401
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "La <strong>versión %1$s</strong> soluciona un problema de seguridad y soluciona %2$s fallo."
 msgstr[1] "La <strong>versión %1$s</strong> soluciona un problema de seguridad y soluciona %2$s fallos."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:64 wp-admin/about.php:89 wp-admin/about.php:375
+#: wp-admin/about.php:84 wp-admin/about.php:109 wp-admin/about.php:395
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "La <strong>versión %1$s</strong> soluciona %2$s fallo."
 msgstr[1] "La <strong>versión %1$s</strong> soluciona %2$s fallos."
 
+#. translators: %s: WordPress version.
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:372
+#: wp-admin/about.php:64 wp-admin/about.php:392
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>La versión %s</strong> soluciona algunos problemas de seguridad."
 
-#: wp-admin/about.php:366
+#: wp-admin/about.php:386
 msgid "Maintenance and Security Release"
 msgstr "Versión de mantenimiento y seguridad"
 
-#: wp-admin/about.php:363
+#: wp-admin/about.php:383
 msgid "Security Release"
 msgstr "Versión de seguridad"
 
-#: wp-admin/about.php:360
+#: wp-admin/about.php:380
 msgid "Maintenance Release"
 msgstr "Versión de mantenimiento"
 
@@ -11243,11 +11245,11 @@ msgstr "<strong>Editar</strong> te lleva a la pantalla de edición de esa entrad
 msgid "Because this is a multisite installation, you may add accounts that already exist on the Network by specifying a username or email, and defining a role. For more options, such as specifying a password, you have to be a Network Administrator and use the hover link under an existing user&#8217;s name to Edit the user profile under Network Admin > All Users."
 msgstr "En una instalación multisitio puedes añadir cuentas que ya existen en la Red especificando el nombre de usuario o la contraseña con la que están registrados en la misma, y definiendo un rol. Para más opciones, como especificar una contraseña, debes ser Administrador de la Red y utilizar el enlace que aparece al pasar sobre los nombres de usuario. Puedes encontrar esta opción bajo Administración de Red > Todos los Usuarios."
 
-#: wp-admin/about.php:347
+#: wp-admin/about.php:367
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Ir a Escritorio &rarr; Inicio"
 
-#: wp-admin/about.php:340
+#: wp-admin/about.php:360
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "Ir a Escritorio &rarr; Actualizaciones"
 
@@ -12007,10 +12009,6 @@ msgstr "Aplicar filtros"
 #: wp-admin/includes/theme.php:338
 msgid "Editor Style"
 msgstr "Estilo del editor"
-
-#: wp-admin/users.php:235
-msgid "Sorry, you are not allowed to edit users."
-msgstr "Lo siento, no tienes permisos para editar usuarios."
 
 #: wp-admin/includes/file.php:2560
 msgid "To perform the requested action, WordPress needs to access your web server."
@@ -12930,7 +12928,7 @@ msgstr "Actualizaciones de WordPress"
 msgid "Edit menu item"
 msgstr "Editar elemento del menú"
 
-#: wp-admin/about.php:347
+#: wp-admin/about.php:367
 msgid "Go to Dashboard"
 msgstr "Ir al escritorio"
 
