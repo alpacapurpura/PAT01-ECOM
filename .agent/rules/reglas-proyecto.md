@@ -1,3 +1,7 @@
+---
+trigger: always_on
+---
+
 # 📋 Reglas Técnicas del Proyecto - Organify E-commerce
 
 ## 1. 🎯 Información Técnica
